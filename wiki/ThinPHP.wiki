@@ -1,0 +1,63 @@
+WNPM2.0配置：
+
+server {
+
+    listen       80;
+
+    server_name  thinkphp.items.10.con;
+
+    root         /svnroot/items/thinkphp/;
+
+    index        index.html index.htm index.php;
+
+    charset      utf-8;
+
+    access_log  off;
+
+
+    location ~ \.php {  
+
+        fastcgi_pass   127.0.0.1:9000;
+
+	fastcgi_param  PATH_INFO $fastcgi_script_name;
+
+        include        /wnpm/webserver/nginx/conf/fastcgi_params;
+
+	index        index.php;
+
+    }
+
+}
+
+
+
+WNPM1.0配置：
+
+server {
+
+    listen       80;
+
+    server_name  thinkphp.items.10.con;
+
+    root         /svnroot/items/thinkphp/;
+
+    index        index.html index.htm index.php;
+
+    charset      utf-8;
+
+    access_log  off;
+
+
+    location ~ \.php {  
+
+        fastcgi_pass   127.0.0.1:9000;
+
+	fastcgi_param  PATH_INFO $fastcgi_script_name;
+
+        include        /usr/local/webserver/nginx/conf/fastcgi_params;
+
+	index        index.php;
+
+    }
+
+}
